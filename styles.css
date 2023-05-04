@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+/* https://codepen.io/mdchad/pen/qqmJex */
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+:root{
+    --password-error-opacity: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+main{
+    display: flex;
+    height: 100%;
+    min-width: 1030px;
+}
+
+#image-logo-container{
+   
+    background-image: url('./resources/keys-from-fedora-38-1920×1080.jpg');
+    background-position: 80%;
+    flex: 0 1 35%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.logo-container{
+    background-color: rgba(80,80,80, 0.2);
+    position: absolute;
+    width: 100%;
+    top: 18%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-container > p {
+    color: white;
+    font-size: 2.2rem;
+    margin: 2rem 0;
+    font-family: 'Bruno Ace SC', cursive;
+    caret-color: transparent;
+
+}
+
+.logo-container > p::after{
+    content: "|";
+    animation: blinking-cursor 1s ease-in-out infinite;
+}
+@keyframes blinking-cursor {
+    0%,100%{
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+
+}
+
+.logo-container > svg{
+    width: 80px;
+    height: 80px;
+}
+#form-page{
+    background-color: #a0ae9d;
+    flex: 0 1 65%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Rubik', sans-serif;
+}
+
+
+
+#form-page > *{
+    flex: 0 1 33.33%;
+}
+
+.form-container{
+    background-color: #c5cdc2;
+    box-shadow: 0px 4px 8px 0px rgba(44,48,40,0.40);
+    caret-color: transparent;
+}
+.form-container > p{
+    font-size: 22px;
+    font-weight: 500;
+}
+
+
+
+.entry-container > input {
+    border-radius: 5px;
+    border: 2px solid #889987;
+    width: 200px;
+    height: 30px;
+    caret-color: black;
+
+}
+.entry-container > input:focus {
+    outline: none;
+    border: 2px solid #3273a5 !important;
+    box-shadow: 2px 4px 8px 0px rgba(44,48,40,0.40);
+}
+
+.entry-container > input:invalid, .isInvalid{
+    border: 2px solid #833a32;
+}
+
+
+
+.entry-container > label{
+    transform: translateY(140%) translateX(0.5rem);
+    color: #c5cdc2;
+    transition: all 0.5s ease;
+    font-size: 12px;
+    width: fit-content;
+    height: 20px;
+}
+
+
+
+.hasValue,
+.entry-container > label:has(+ input:focus){
+    color: black !important; 
+    transform: translateY(0%) translateX(0%) !important;
+    font-size: 16px !important;
+}
+
+
+
+.form-container > * {
+    margin-left: 6%;
+    margin-right: 6%;
+}
+
+.sign-up-form{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(100px,400px));
+    row-gap: 2.5rem;
+    margin-bottom: 2%;
+
+}
+
+
+.entry-container > * {
+    display: block;
+}
+
+.intro-text{
+    margin-left: 6%;
+    margin-right: 6%;
+    font-size: 24px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.intro-text > p{
+    margin-top: 0;
+
+}
+
+.intro-text > p:last-child{
+    margin-bottom: 60px;
+
+}
+
+.button-container{
+    position: relative;
+}
+
+.button-container > button, .button-container > p {
+    position: relative;
+    left: 2rem;
+    top: 2rem;
+}
+
+.button-container > button{
+    padding: 14px 50px;
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    background-color: #536055;
+    color: white;
+    box-shadow: 0px 4px 8px 0px rgba(44,48,40,0.40);
+    cursor: pointer;
+}
+
+.button-container > p{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.button-container > p > a{
+    text-decoration: none;
+    color: #353152;
+}
+
+.entry-container:nth-child(5)::after{
+    content: '* Passwords do not match';
+    color: #b9594a;
+    opacity: var(--password-error-opacity);
+    transition: 0.2s opacity;
+}
+
+
