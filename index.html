@@ -29,11 +29,11 @@
                 <form action="" method="get" class="sign-up-form" id="odin-sign-up-form" autocomplete="off">
                     <div class="entry-container">
                         <label for="first_name">FIRST NAME</label>
-                        <input type="text" name="first_name" id="first_name" pattern="[^\d]+">
+                        <input type="text" name="first_name" id="first_name" pattern="[^\d]+" minlength="2" maxlength="12">
                     </div>
                     <div class="entry-container">
                         <label for="last_name">LAST NAME</label>
-                        <input type="text" name="last_name" id="last_name" pattern="[^\d]+">    
+                        <input type="text" name="last_name" id="last_name" pattern="[^\d]+" minlength="2" maxlength="12">    
                     </div>
                     <div class="entry-container">
                         <label for="email_addr">EMAIL</label>
